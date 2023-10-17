@@ -1,62 +1,61 @@
-// Define any global variables or constants here
-var container = document.getElementById("object-container");
-container.innerHTML = "1"; // clear the container
-// ToDo add images to the objects
-
-// Define any functions you need here
-function displayObjects() {
-  var container = document.getElementById("object-container");
-  container.innerHTML = "0"; // clear the container
-
-  if (objects.length === 0) {
-    var message = document.createElement("p");
-    message.textContent = "No objects found.";
-    container.appendChild(message);
-  } else {
-    for (var i = 0; i < objects.length; i++) {
-      var object = objects[i];
-
-      var div = document.createElement("div");
-      div.className = "object";
-      div.innerHTML = "<h2>" + object.name + "(" + object.id + ")" + "</h2><p>" + object.description + "</p>";
-
-      container.appendChild(div);
-    }
-  }
-}
-
-function searchObjects() {
-    var searchTerm = document.getElementById("search-term").value.toLowerCase();
+function searchObjects(searchTerm) {
     var matches = [];
   
     for (var i = 0; i < objects.length; i++) {
       var object = objects[i];
   
-      if (object.name.toLowerCase().includes(searchTerm)) {
+      if (object.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        matches.push(object);
+      } else if (object.id.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
+        matches.push(object);
+      } else if (object.short_description.toLowerCase().includes(searchTerm.toLowerCase())) {
         matches.push(object);
       }
     }
   
-    objects = matches; // update the objects array with the matches
-    displayObjects(); // display the matching objects on the page
-  
-    var container = document.getElementById("object-container");
-    container.style.display = "block"; // show the object-container div
-  }
-  
-  // Wait for the DOM to be ready before executing any code
-  document.addEventListener("DOMContentLoaded", function() {
-    // Your code goes here
-  
-    var searchInput = document.getElementById("search-term");
-    var searchButton = document.getElementById("search-button");
-  
-    searchInput.addEventListener("input", function() {
-      searchObjects();
-      if (searchInput.value === "") {
-        searchButton.disabled = true;
+    matches.sort(function(a, b) {
+      if (a.name.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0 && b.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== 0) {
+        return -1;
+      } else if (a.id.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) === 0 && b.id.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) !== 0) {
+        return -1;
+      } else if (a.short_description.toLowerCase().indexOf(searchTerm.toLowerCase()) === 0 && b.short_description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== 0) {
+        return -1;
       } else {
-        searchButton.disabled = false;
+        return 0;
       }
     });
+  
+    return matches;
+  }
+
+  function displaySearchResults(results) {
+    var container = document.getElementById("search-results");
+    container.innerHTML = "";
+
+    if (results.length === 0) {
+      container.innerHTML = "No results found.";
+      return;
+    }
+
+    for (var i = 0; i < results.length; i++) {
+      var object = results[i];
+
+      var div = document.createElement("div");
+      div.innerHTML = "<h2>" + object.name + "</h2><p>" + object.short_description + "</p>";
+
+      container.appendChild(div);
+    }
+  }
+
+  var searchInput = document.getElementById("search-input");
+
+  searchInput.addEventListener("input", function() {
+    var searchTerm = searchInput.value;
+  
+    if (searchTerm === "") {
+      displaySearchResults([]);
+    } else {
+      var results = searchObjects(searchTerm);
+      displaySearchResults(results);
+    }
   });
