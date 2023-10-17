@@ -1,0 +1,30 @@
+/* Set the font family and size for the entire page */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f0f0f0; /* Set the background color for the page */
+}
+
+/* Set the color and decoration for links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+/* Set the color and background color for headings */
+h1, h2, h3 {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+/* Set the padding and margin for paragraphs */
+p {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Set the border and padding for images */
+img {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
