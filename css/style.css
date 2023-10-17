@@ -1,8 +1,14 @@
-/* Set the font family and size for the entire page */
+
 body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: ß;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  background-color: #f0f0f0; /* Set the background color for the page */
+  background-color: #f0f0f0; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Set the color and decoration for links */
@@ -13,6 +19,7 @@ a {
 
 /* Set the color and background color for headings */
 h1, h2, h3 {
+  padding: 10px;
   color: #333;
   background-color: #f0f0f0;
 }
@@ -26,5 +33,27 @@ p {
 /* Set the border and padding for images */
 img {
   border: 1px solid #ccc;
-  padding: 5px;
+  padding: 0px;
+}
+
+img.logo {
+  border: none;
+}
+
+
+/* Set the background color for the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
 }
