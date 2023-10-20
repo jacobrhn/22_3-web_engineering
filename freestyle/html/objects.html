@@ -33,27 +33,6 @@
         <p><a href="impressum.html">Impressum</a></p>
         
     </footer>
-    <script>
-        const searchInput = document.getElementById('search-input');
-        const searchResults = document.getElementById('search-results');
-
-        searchInput.addEventListener('input', function() {
-            const searchValue = searchInput.value.toLowerCase();
-            let html = '';
-            for (let i = 0; i < objects.length; i++) {
-                const object = objects[i];
-                if (object.name.toLowerCase().includes(searchValue)) {
-                    html += '<div class="object">';
-                    html += '<h2>' + object.name + '</h2>';
-                    html += '<img src="' + object.image + '" alt="' + object.name + '">';
-                    html += '<p>' + object.description + '</p>';
-                    html += '</div>';
-                }
-            }
-            searchResults.innerHTML = html;
-            searchResults.scrollIntoView({behavior: "smooth"});
-        });
-    </script>
 </body>
 
 </html>
