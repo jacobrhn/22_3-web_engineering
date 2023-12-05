@@ -38,9 +38,9 @@ export function addToLocalStorage(object, key) {
 
   if (isInLocalStorage(object, key)) {
     window.dispatchEvent(new CustomEvent('localStorageUpdated'));
-    console.log('Added to LocalStorage', key, object);
+    console.log('Added to LocalStorage, test 2', key, object);
   } else {
-    console.log('Error adding to LocalStorage', key, object);
+    console.log('Error adding to LocalStorage, test 1', key, object);
   }
 }
 
@@ -57,6 +57,6 @@ export function removeFromLocalStorage(object, key) {
     localStorage.setItem(key, JSON.stringify(storedObjects));
 
     window.dispatchEvent(new CustomEvent('localStorageUpdated'));
-    console.log('Removed from LocalStorage', key, object);
+    console.log('Removed from LocalStorage, test', key, object);
   }
 }
