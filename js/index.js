@@ -1,4 +1,4 @@
-import { ObjectContainer } from '/22_3-web_engeneering/js/components/ObjectTile.js';
+import { ObjectContainer } from 'https://jacobrhn.github.io/22_3-web_engeneering/js/components/ObjectTile.js';
 import { dineData } from '/22_3-web_engeneering/js/components/objectData.js';
 import { renderHeader } from '/22_3-web_engeneering/js/components/header.js';
 
