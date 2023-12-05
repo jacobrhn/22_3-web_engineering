@@ -1,6 +1,6 @@
 import { ObjectContainer } from '/22_3-web_engeneering/js/components/ObjectTile.js';
-import { dineData } from './js/components/objectData.js';
-import { renderHeader } from './js/components/header.js';
+import { dineData } from '/22_3-web_engeneering/js/components/objectData.js';
+import { renderHeader } from '/22_3-web_engeneering/js/components/header.js';
 
 
 
