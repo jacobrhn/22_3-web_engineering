@@ -104,9 +104,9 @@ class ObjectTile {
 
   updateFavoritesDisplay(element) {
     if (isInLocalStorage(this.object, "favorites")) {
-      element.src = '../assets/icons/favicon-true.png';
+      element.src = 'assets/icons/favicon-true.png';
     } else {
-      element.src = '../assets/icons/favicon-false.png';
+      element.src = 'assets/icons/favicon-false.png';
     }
   }
 
