@@ -36,8 +36,12 @@ export function addToLocalStorage(object, key) {
   storedObjects.push(object);
   localStorage.setItem(key, JSON.stringify(storedObjects));
 
-  window.dispatchEvent(new CustomEvent('localStorageUpdated'));
-  console.log('Removed from LocalStorage', key, object);
+  if (isInLocalStorage(object, key)) {
+    window.dispatchEvent(new CustomEvent('localStorageUpdated'));
+    console.log('Added to LocalStorage', key, object);
+  } else {
+    console.log('Error adding to LocalStorage', key, object);
+  }
 }
 
 /**
