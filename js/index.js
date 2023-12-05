@@ -5,7 +5,9 @@ import { renderHeader } from '/js/components/header.js';
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('v0.1.1');
     renderHeader('header123');
+
   });
 
 
