@@ -1,4 +1,4 @@
-import { ObjectContainer } from 'js/components/ObjectTile.js';
+import { ObjectContainer } from '/js/components/ObjectTile.js';
 import { dineData } from '/js/components/objectData.js';
 import { renderHeader } from '/js/components/header.js';
 
