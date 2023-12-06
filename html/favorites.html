@@ -1,0 +1,68 @@
+<!-- FILEPATH: /Users/jacob/data/dhbw/22_3-web_engeneering/html/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <header>
+        <img src="../assets/logo/header.png" alt="My Website Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./objects.html">Objects</a></li>
+                <li><a href="./favorites.html">Favorites</a></li>
+                <li><a href="./contact.html">Contact</a></li>                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Favorites</h1>
+        <p>Here you can see the IDs stored in localStorage:</p>
+
+        <div id="ids-in-local-storage"></div>
+        <script>
+            function getObjectById(objectId) {
+            const objects = JSON.parse(localStorage.getItem('objects'));
+            for (let i = 0; i < objects.length; i++) {
+                const object = objects[i];
+                if (object.id === objectId) {
+                console.log(object);
+                return object;
+                }
+            }
+            return null;
+            }
+
+            function displayFavoritesIDs() {
+                const favorites = JSON.parse(localStorage.getItem('favorites'));
+                const displayDiv = document.getElementById('ids-in-local-storage');
+
+                if (favorites && favorites.length > 0) {
+                    displayDiv.innerHTML = favorites.join(', ');
+                } else {
+                    displayDiv.innerHTML = 'Keine Favoriten gefunden.';
+                }
+            };          
+            
+
+            document.addEventListener('DOMContentLoaded', function() {
+                displayFavoritesIDs();
+                displayFavorites();
+            });
+          </script>
+
+    </main>
+    <footer>
+        <script src="../js/object_catalouge.js"></script>
+        <script src="../js/favorites.js"></script>
+        <div class="spacer"></div>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+        <p><a href="https://github.com/jacobrhn/22_3-web_engeneering" target="_blank">View in the Github</a></p>
+        <p><a href="impressum.html">Impressum</a></p>
+    </footer>
+</body>
+</html>
