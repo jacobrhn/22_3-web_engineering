@@ -1,314 +1,58 @@
 body {
+  overflow-x: hidden;
   margin: 0;
-  padding: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
+  padding: ß;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  background-color: #fff;
-  color: #333;
-  line-height: 1.6;
+  background-color: #f0f0f0; 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Set the color and decoration for links */
 a {
   color: #0077cc;
   text-decoration: none;
 }
 
+/* Set the color and background color for headings */
 h1, h2, h3 {
+  padding: 10px;
   color: #333;
-  margin: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-weight: normal;
+  background-color: #f0f0f0;
 }
 
+/* Set the padding and margin for paragraphs */
 p {
-  margin: 0;
-  padding: 10px 0;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-.container {
-  max-width: 1024px;
-  margin-top: 20;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 0 20px;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  margin-right: 250px; /* Abstand zwischen den Links */
-  transition: transform 0.2s ease-in-out;
-}
-nav li:hover {
-  transform: scale(1.1); /* Beispiel: Vergrößern des Links beim Hover */
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-}
-
+/* Set the border and padding for images */
 img {
-  max-width: 100%;
-  height: auto;
-}
-
-footer {
-  background-color: #f5f5f7;
-  padding: 20px 0;
-  margin-top: auto;
-}
-
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding-inline-start: 0;
-}
-
-.menu li {
-  width: 200px;
-  margin: 10px;
-  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
-
-.menu li:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.menu img {
-  border-radius: 50%;
-  max-width: 100px;
-}
-
-
-.dineinsight-logo img {
-    width: 40px;
-    height: 40px;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #1fa0f6;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
-}
-
-.results {
-    max-width: 800px;
-    margin: 20px 20px 20px 0; /* Fügen Sie 20px rechten Rand hinzu, um Abstand von anderen Inhalten zu schaffen */
-    padding: 10px;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.result {
-    width: 200px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-    
-}
-
-.favoriteResults {
-  width: 200px; 
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.result:hover {
-    transform: scale(1.1);
-}
-
-.result img {
-    border-radius: 50%;
-    max-width: 100px;
-}
-/* style close-button for search result */
-.close-button {
-  position: absolute;
-  right: 20px; 
-  top: 20px;  
-  cursor: pointer;
-  font-size: 20px; 
-  color: #333;   
-}
-
-.headerExpand {
-  background-color: #333;
-}
-
-.headerExpand p {
-  color: #ffff;
-}
-
-.headerExpand li {
-  color: #ffff; 
-  list-style: none;
-}
-
-#objectDisplay-Container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.object-tile {
-  position: relative;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 240px;
-  height: 340px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.object-tile:hover {
-  transform: scale(1.08);
-}
-
-.object-tile img {
-  object-fit: cover;
-  margin-top: 10px;
-}
-
-.object-tile button {
-  margin-top: auto;
-  background-color: #1fa0f6;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.object-tile button:hover {
-  background-color: #005999;
-}
-
-.object-tile p {
-  font-size: 14px;
-  color: #666;
-  text-align: center;
   padding: 0px;
 }
 
-.object-tile a {
-  color: #1fa0f6;
-  text-decoration: none;
-  align-self: start;
-  display: flex; /* Verwenden Sie Flexbox für die Ausrichtung */
-  justify-content: center; /* Zentriert den Inhalt horizontal */
-  align-items: center; /* Zentriert den Inhalt vertikal */
-}
-
-.favourites-icon {
-  position: absolute;
-  top: 0px;
-  right: 10px;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
+img.logo {
+  border: none;
 }
 
 
-.error-page {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: #ffffff;
+/* Set the background color for the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
 }
 
-.error-page h1 {
-  font-size: 48px;
-  color: #050000;
-  margin-top: 20px;
+main {
+  flex: 1;
 }
 
-.error-page p {
-  font-size: 24px;
-  color: #666;
-  margin-bottom: 40px;
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
 }
-
-.error-page a {
-  font-size: 20px;
-  color: #1fa0f6;
-  text-decoration: none;
-}
-
-.error-page a:hover {
-  text-decoration: underline;
-}
-.error-page img {
-  max-width: 40%;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;/* Add margin-bottom to create space between image and footer */
-}
-
-
