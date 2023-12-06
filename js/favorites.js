@@ -1,3 +1,4 @@
+
 function displayIdArray() {
     const div = document.getElementById('ids-in-local-storage');
     div.innerHTML = localStorage.getItem('favorites');
@@ -39,4 +40,3 @@ function getObjectById(objectId) {
     favoritesDisplay.innerHTML = html;
     favoritesDisplay.scrollIntoView({behavior: "smooth"});
   }
-  
